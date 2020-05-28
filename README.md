@@ -3,7 +3,7 @@ Additional, helpful commands to execute and display information when bash is lau
 
     Displays: 
     
-    (1) Current weathe information and forecast for current day from wttr.in
+    (1) Current weather information and forecast for current day from wttr.in
     
     (2) Current date and time
     
