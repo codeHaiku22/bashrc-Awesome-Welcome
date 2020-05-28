@@ -1,13 +1,30 @@
 #!/bin/bash
-# Display today's weather forecast for the current region.
-wget wttr.in/95816 1&>/dev/null
+
+#Display weather forecast for current time and current day.
+curl -s wttr.in/95202 | head -n 17
+
+#Display the date.
 echo $(date)
-head -n 17 95816
-rm -f 95816
-#Add a nice dad joke.
-curl https://icanhazdadjoke.com
 echo ''
-#echo $(date) > weather.txt
-#curl wttr.in/95816 >> weather.txt
-#head -n 18 weather.txt
-#rm -f weather.txt
+
+#Display system metrics and information.
+#End it off with a dad joke. 
+domainIP=$(hostname -I | awk '{print $1}')
+publicIP=$(curl -s ifconfig.me)
+upTime=$(uptime -p)
+cpuLong=$(cat /proc/cpuinfo | grep 'model name' | head -n 1)
+cpu=$(echo $cpuLong | sed 's/model name : //')
+cores=$(cat /proc/cpuinfo | grep cores | head -n 1 | awk '{print "("$4 " " $2")"}')
+load=$(uptime | awk '{print $9 " " $10 " " $11}')
+memory=$(free -h | grep Mem | awk '{print $3 " / " $2 " ("$3/$2 * 100"%) Usage"}' | sed 's/Gi/G/g')
+disk=$(df -H | grep /mnt | awk '{print $3 " / " $2 " ("$3/$2 * 100"%) Usage " $6}')
+dadJoke=$(curl -s https://icanhazdadjoke.com)
+echo "CPU      :" $cpu" "$cores
+echo "Load     :" $load
+echo "Memory   :" $memory
+echo "Disk     :" $disk
+echo "Domain IP:" $domainIP
+echo "Public IP:" $publicIP
+echo "Uptime   :" $upTime
+echo ""
+echo $dadJoke
