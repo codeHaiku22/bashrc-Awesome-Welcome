@@ -3,10 +3,10 @@ Additional, helpful commands to execute and display information when bash is lau
 
     Displays: 
     
-    (1) Current date and time
+    (1) Current weathe information and forecast for current day from wttr.in
     
-    (2) Current weather information from wttr.in
+    (2) Current date and time
     
-    (3) Weather forecast for current day from wttr.in
+    (3) System information (CPU, memory, disk, IP, etc.)
     
     (4) A random dad joke
