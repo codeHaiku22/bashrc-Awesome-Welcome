@@ -7,6 +7,6 @@ Additional, helpful commands to execute and display information when bash is lau
     
     (2) Current date and time
     
-    (3) System information (CPU, memory, disk, IP, etc.)
+    (3) System information (CPU, GPU, memory, disks, IP, etc.)
     
     (4) A random dad joke
