@@ -5,20 +5,23 @@ curl -s wttr.in/95356 | head -n 17
 echo $(date)
 echo ''
 
-#Display system metrics and information. 
-domainIP=$(hostname -I | awk '{print $1}')
-publicIP=$(curl -s ifconfig.me)
-upTime=$(uptime -p | sed 's/up//')
+#Display system metrics and information.
+
+hostname=$(hostname)
 distro=$(cat /etc/issue | awk '{print $1 " " $2 " " $3}')
 kernel=$(uname -a | awk '{print $3}')
 cpuLong=$(cat /proc/cpuinfo | grep 'model name' | head -n 1)
-gpu=$(lspci | grep VGA | awk -F controller: '{print $2}')
 cpu=$(echo $cpuLong | sed 's/model name : //')
 cores=$(cat /proc/cpuinfo | grep cores | head -n 1 | awk '{print "("$4 " " $2")"}')
 load=$(uptime | awk -F average: '{print $2}')
+gpu=$(lspci | grep VGA | awk -F controller: '{print $2}')
 memoryPct=$(printf '%.1f\n' $(free | grep Mem | awk '{print ($3/$2 * 100)}'))
 memory=$(free -h | grep Mem | awk '{print $3 " / " $2}' | sed 's/Gi/G/g')
+domainIP=$(hostname -I | awk '{print $1}')
+publicIP=$(curl -s ifconfig.me)
+upTime=$(uptime -p | sed 's/up//')
 
+echo "Hostname        :" $hostname
 echo "Distro          :" $distro
 echo "Kernel          :" $kernel
 echo "CPU             :" $cpu" "$cores
