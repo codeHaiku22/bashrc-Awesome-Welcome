@@ -1,5 +1,5 @@
 #Display weather forecast for current time and current day.
-curl -s wttr.in/95356 | head -n 17
+curl -s wttr.in/90210 | head -n 17
 
 #Display the date.
 echo $(date)
@@ -39,6 +39,6 @@ echo "Public IP       :" $publicIP
 echo "Uptime          :" $upTime
 echo ""
 
-#End if off with a dad joke.
+#End it off with a dad joke.
 curl -s https://icanhazdadjoke.com
 echo ""
