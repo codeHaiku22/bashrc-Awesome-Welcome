@@ -37,9 +37,14 @@ echo "Distro          :" $distro
 echo "Kernel          :" $kernel
 echo "CPU Info        :" $cpu" "$cores
 echo "CPU Load        :" $load
-echo "CPU Usage       :" $(create_usage_line $cpuPct)
-echo "Memory          :" $(create_usage_line $memoryPct)"     "$memory
 echo "GPU             :" $gpu
+echo "Domain IP       :" $domainIP
+echo "Public IP       :" $publicIP
+echo "Uptime          :" $upTime
+echo ""
+echo "CPU             :" $(create_usage_line $cpuPct)
+echo "Memory          :" $(create_usage_line $memoryPct)"     "$memory
+
 df -H | sort -h | grep /dev/sd | while read disk; do
   mountEntry=$(echo $disk | awk '{print $1}')
   mountUsage=$(echo $disk | awk '{print $3 " / " $2}')
@@ -47,9 +52,6 @@ df -H | sort -h | grep /dev/sd | while read disk; do
   #echo "Disk ["$mountEntry"]: "$mountUsage " ("$mountPct") Usage";
   echo "Disk ["$mountEntry"]: "$(create_usage_line $mountPct)"     "$mountUsage
 done
-echo "Domain IP       :" $domainIP
-echo "Public IP       :" $publicIP
-echo "Uptime          :" $upTime
 echo ""
 
 #End it off with a dad joke.
