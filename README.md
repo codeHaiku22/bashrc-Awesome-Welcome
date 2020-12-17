@@ -11,4 +11,4 @@ Displays:
 
 4. A random dad joke
 
-![screenshot](screenshot.png)
+![screenshot](Screenshot.png)
