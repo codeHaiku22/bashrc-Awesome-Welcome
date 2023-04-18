@@ -1,5 +1,5 @@
 # bashrc Awesome Welcome
-Additional, helpful commands to execute and display information when bash is launched.
+Additional, helpful commands that execute and display useful information when bash is launched within a Linux distribution.  Just place the code into your .bashrc file.  
 
 Displays: 
 
