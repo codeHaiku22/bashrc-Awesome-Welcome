@@ -1,4 +1,4 @@
-# bashrc-Scripts
+# bashrc Awesome Welcome
 Additional, helpful commands to execute and display information when bash is launched.
 
 Displays: 
