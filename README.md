@@ -1,6 +1,8 @@
 # bashrc Awesome Welcome
 Additional, helpful commands that execute and display useful information when bash is launched within a Linux distribution.  Just place the code into your .bashrc file.  
 
+***Update:*** See the new and improved version of this written in Python at this GitHub [repository](https://github.com/codeHaiku22/pySysInfo).
+
 Displays: 
 
 1. Current weather information and forecast for current day from wttr.in
